@@ -12,17 +12,16 @@ public class Mistico extends Personaje{
 
     public void usarEstrategia(Equipo e) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese un número entre 1 y 6: ");
-        //int valorIngresado = scanner.nextInt();
-        int valorIngresado = 5;
+        System.out.print("Ingrese un número entre 1 y 6: ");
+        int valorIngresado = scanner.nextInt();
         int randomNum = (int) (Math.random() * 6 + 1);
+        System.out.println("El número a adivinar era " + randomNum);
         
         if (randomNum == valorIngresado) {
             ataque += e.danoRealizado;
             System.out.println(getNombre() + " ha usado su estrategia");
             System.out.println(getNombre() + " ha aumentado su ataque en " + e.danoRealizado + ". Ataque: " + ataque);
         }
-        scanner.close();
     }
 
     @Override
@@ -30,7 +29,7 @@ public class Mistico extends Personaje{
         super.realizarAtaque(contrario, e);
         if (ataque != ataqueOriginal) {
             ataque = ataqueOriginal;
-            System.out.println(getNombre() + " ha restaurado su ataque a su estado original. Vida: " + ataque);
+            System.out.println(getNombre() + " ha restaurado su ataque a su estado original. Ataque: " + ataque);
         }
         e.danoRealizado = 0;
     }

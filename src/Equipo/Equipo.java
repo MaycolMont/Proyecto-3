@@ -24,18 +24,20 @@ public class Equipo {
     }
 
     public void atacarOtroEquipo(Equipo e) {
-        System.out.println("---------" + nombre + " ataca a " + e.getNombre() + "---------");
+        if (!estaDerrotado()) {
+            System.out.println("--------- Equipo " + nombre + " ataca");
         ArrayList<Personaje> miEquipo = getPersonajes();
         ArrayList<Personaje> eContrario = e.getPersonajes();
 
         int i = 0;
         
         for (Personaje p : miEquipo) {
-            if (p.estaDerrotado()){
-                continue;
-            }
             Personaje contrario = eContrario.get(i);
-            if (contrario.estaDerrotado()) {
+
+            if (!p.estaDerrotado() && !contrario.estaDerrotado()){
+                p.realizarAtaque(contrario, this);;
+            }
+/*             if (contrario.estaDerrotado()) {
                 i = e.siguientePersonajeVivo(i);
                 if (i < 0) {
                     break;
@@ -43,10 +45,9 @@ public class Equipo {
                 contrario = eContrario.get(i);
                 p.realizarAtaque(contrario, this);
                 continue;
-            }
-
-            p.realizarAtaque(contrario, this);
+            } */
             i++;
+        }
         }
     }
 
@@ -84,7 +85,7 @@ public class Equipo {
 
     public void mostrarPersonajes() {
         ArrayList<Personaje> personajes = getPersonajes();
-        String msg = "Equipo" + nombre + ":";
+        String msg = "Equipo " + nombre + ":";
         for (Personaje personaje : personajes) {
             String inicial = personaje.getNombre().substring(0, 3);
             if (personaje.estaDerrotado()) {

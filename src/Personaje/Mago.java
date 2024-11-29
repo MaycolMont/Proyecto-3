@@ -9,7 +9,6 @@ public class Mago extends Personaje{
         super(n, v, a, d);
     }
 
-    @Override
     public void usarEstrategia(Equipo e) {
         ArrayList<Personaje> personajes = e.getPersonajes();
         int nPersonajes = personajes.size();

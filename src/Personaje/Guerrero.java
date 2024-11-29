@@ -6,7 +6,6 @@ public class Guerrero extends Personaje{
         super(n, v, a, d);
     }
 
-    @Override
     public void usarEstrategia(Equipo e){
         ataque *= 2;
         System.out.println(getNombre() + " ha usado su estrategia");

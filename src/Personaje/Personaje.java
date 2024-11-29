@@ -15,14 +15,8 @@ public abstract class Personaje {
         defensa = d;
     }
 
-    public Personaje(){}
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void mostrarInformacion() {
-        System.out.println("Nombre");
     }
 
     public void recibirAtaque(int dano) {

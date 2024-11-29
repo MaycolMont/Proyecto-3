@@ -6,15 +6,15 @@ import Personaje.Mistico;
 public class App {
     public static void main(String[] args) throws Exception {
         Equipo equipo1 = new Equipo("Rojo");
-        equipo1.agregarPersonaje(new Guerrero("Guerrero Rojo", 100, 20, 10));
-        equipo1.agregarPersonaje(new Mago("Mago Rojo", 80, 25, 5));
+        equipo1.agregarPersonaje(new Guerrero("Guerrero Rojo 1", 100, 20, 10));
+        equipo1.agregarPersonaje(new Guerrero("Guerrero Rojo 2", 85, 25, 14));
         equipo1.agregarPersonaje(new Mago("Mago Extra Rojo", 75, 22, 4));
         equipo1.agregarPersonaje(new Mistico("Mistico Rojo", 85, 18, 8));
 
         // Equipo 2
         Equipo equipo2 = new Equipo("Azul");
-        equipo2.agregarPersonaje(new Guerrero("Guerrero Azul", 90, 18, 12));
-        equipo2.agregarPersonaje(new Mago("Mago Azul", 70, 30, 3));
+        equipo2.agregarPersonaje(new Guerrero("Guerrero Azul 1", 95, 22, 12));
+        equipo2.agregarPersonaje(new Guerrero("Guerrero Azul 2", 90, 23, 15));
         equipo2.agregarPersonaje(new Mago("Mago Extra Azul", 65, 28, 2));
         equipo2.agregarPersonaje(new Mistico("Mistico Azul", 80, 20, 7));
 
