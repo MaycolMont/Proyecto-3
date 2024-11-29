@@ -29,7 +29,7 @@ public class Mistico extends Personaje{
     public void realizarAtaque(Personaje contrario, Equipo e) {
         super.realizarAtaque(contrario, e);
         if (ataque != ataqueOriginal) {
-            vida = ataqueOriginal;
+            ataque = ataqueOriginal;
             System.out.println(getNombre() + " ha restaurado su ataque a su estado original. Vida: " + ataque);
         }
         e.danoRealizado = 0;

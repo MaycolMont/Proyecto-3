@@ -31,9 +31,7 @@ public abstract class Personaje {
             System.out.println(nombre + " ha sido derrotado.");
         } else {
             vida -= dano;
-
             String msg = nombre + " recibe " + dano + " de daño. Vida restante: " + vida;
-
             System.out.println(msg);
         }
     }
